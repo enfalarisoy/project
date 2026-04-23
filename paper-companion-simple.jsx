@@ -597,10 +597,6 @@ function Overview() {
         </ul>
       </div>
 
-      <Callout color="#2563b0" bg="#eff5ff">
-        <b>Research question:</b> How does switching from a fixed to a dynamic post-failure offer policy affect players' intertemporal spending in mobile games?
-      </Callout>
-      <OverviewMechanismMini/>
       <div style={{display:"flex",gap:8,marginBottom:12,flexWrap:"wrap"}}>
         <Card label="Short-Run" value="+12.3%" sub="+78 coins/bin, first 10 levels" color="#2563b0"/>
         <Card label="Long-Run"  value="−14.8%" sub="−94 coins/bin, persistent"      color="#b92d2d"/>
@@ -693,6 +689,10 @@ function Results() {
   return (
     <div>
       <TabHeading title="Main Result"/>
+      <Callout color="#2563b0" bg="#eff5ff">
+        <b>Research question:</b> How does switching from a fixed to a dynamic post-failure offer policy affect players' intertemporal spending in mobile games?
+      </Callout>
+      <OverviewMechanismMini/>
       <Callout color="#2563b0" bg="#eff5ff">
         Estimated via <b>Callaway &amp; Sant'Anna (2021)</b> staggered DiD. 35 ten-level bins, levels 200–548. Not-yet-treated players as control group.
       </Callout>
