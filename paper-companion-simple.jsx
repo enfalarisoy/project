@@ -250,104 +250,79 @@ function TableHeader({ children, align = "left", ...rest }) {
   );
 }
 
-function BonusActionsExplainer() {
-  const cardStyle = {
-    flex: 1,
-    background: "#fff",
-    border: "1px solid " + COLORS.border,
-    borderRadius: 16,
-    padding: "16px 14px",
-    minHeight: 170,
-  };
-
-  return (
-    <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 14 }}>
-      <div style={cardStyle}>
-        <div style={{ fontSize: 11, fontWeight: 700, textTransform: "uppercase", color: "#8d8da3", marginBottom: 10 }}>
-          Level Failure
-        </div>
-        <div
-          style={{
-            borderRadius: 18,
-            border: "1px solid #dedee8",
-            background: "#f7f7fb",
-            height: 120,
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "center",
-            textAlign: "center",
-            fontSize: 15,
-            lineHeight: 1.6,
-            color: COLORS.ink,
-            fontWeight: 700,
-          }}
-        >
-          Player runs out of moves
-          <br />
-          and fails the level
-        </div>
-      </div>
-      <div style={cardStyle}>
-        <div style={{ fontSize: 11, fontWeight: 700, textTransform: "uppercase", color: "#8d8da3", marginBottom: 10 }}>
-          Post-Failure Offer
-        </div>
-        <div
-          style={{
-            borderRadius: 18,
-            border: "1px solid #d4c9a8",
-            background: "#fff9ec",
-            height: 120,
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "center",
-            textAlign: "center",
-            fontSize: 15,
-            lineHeight: 1.6,
-            color: COLORS.ink,
-            fontWeight: 700,
-          }}
-        >
-          Buy extra moves with coins
-          <br />
-          and continue from failure
-        </div>
-      </div>
-    </div>
-  );
-}
-
-function SettingFlow() {
-  const itemStyle = {
-    flex: 1,
-    minHeight: 92,
-    borderRadius: 14,
-    border: "1px solid " + COLORS.border,
-    background: "#f8f8fc",
-    padding: "14px 12px",
+function SettingFlowImages() {
+  const figureStyle = {
+    flex: "1 1 0",
+    minWidth: 0,
     textAlign: "center",
   };
 
+  const imageStyle = {
+    width: "100%",
+    height: 280,
+    objectFit: "contain",
+    display: "block",
+  };
+
+  const captionTitle = {
+    fontSize: 10,
+    textTransform: "uppercase",
+    letterSpacing: "0.08em",
+    color: "#8d8da3",
+    marginTop: 10,
+    marginBottom: 6,
+    fontWeight: 700,
+  };
+
+  const captionText = {
+    fontSize: 13,
+    lineHeight: 1.55,
+    color: COLORS.ink,
+    fontWeight: 600,
+  };
+
   return (
-    <div style={{ display: "flex", gap: 10, alignItems: "center", flexWrap: "wrap" }}>
-      <div style={itemStyle}>
-        <div style={{ fontSize: 10, textTransform: "uppercase", letterSpacing: "0.08em", color: "#8d8da3", marginBottom: 8 }}>
-          Match-3 Level
-        </div>
-        <div style={{ fontWeight: 700, color: COLORS.ink }}>Clear obstacles within a move limit</div>
+    <div style={{ display: "flex", gap: 16, alignItems: "stretch", flexWrap: "nowrap" }}>
+      <div style={figureStyle}>
+        <img src="./IMG_0355.jpg" alt="Match-3 level" style={imageStyle} />
+        <div style={captionTitle}>Match-3 Level</div>
+        <div style={captionText}>Clear obstacles within a move limit</div>
       </div>
-      <div style={{ fontSize: 22, color: COLORS.royalBlueDark, fontWeight: 700 }}>→</div>
-      <div style={itemStyle}>
-        <div style={{ fontSize: 10, textTransform: "uppercase", letterSpacing: "0.08em", color: "#8d8da3", marginBottom: 8 }}>
-          Failure
-        </div>
-        <div style={{ fontWeight: 700, color: COLORS.ink }}>Player runs out of moves before finishing</div>
+      <div
+        style={{
+          fontSize: 34,
+          color: COLORS.royalBlueDark,
+          fontWeight: 700,
+          flex: "0 0 24px",
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
+        }}
+      >
+        →
       </div>
-      <div style={{ fontSize: 22, color: COLORS.royalBlueDark, fontWeight: 700 }}>→</div>
-      <div style={{ ...itemStyle, background: "#fff9ec", borderColor: "#dbc27b" }}>
-        <div style={{ fontSize: 10, textTransform: "uppercase", letterSpacing: "0.08em", color: "#8d8da3", marginBottom: 8 }}>
-          Bonus Action
-        </div>
-        <div style={{ fontWeight: 700, color: COLORS.ink }}>Offer appears: buy more moves with coins</div>
+      <div style={figureStyle}>
+        <img src="./oom1.png" alt="Failure screen" style={imageStyle} />
+        <div style={captionTitle}>Failure</div>
+        <div style={captionText}>Player runs out of moves before finishing</div>
+      </div>
+      <div
+        style={{
+          fontSize: 34,
+          color: COLORS.royalBlueDark,
+          fontWeight: 700,
+          flex: "0 0 24px",
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
+        }}
+      >
+        →
+      </div>
+      <div style={figureStyle}>
+        <img src="./offer.png" alt="Bonus action offer" style={imageStyle} />
+        <div style={captionTitle}>Bonus Action</div>
+        <div style={captionText}>Offer appears: buy more moves with coins</div>
       </div>
     </div>
   );
@@ -530,7 +505,10 @@ function ExposureDiagram({ title, mode }) {
               {sx && <line x1={sx} y1={y} x2={x1} y2={y} stroke={COLORS.blue} strokeWidth="6" strokeLinecap="round" />}
               {sx && <circle cx={sx} cy={y} r="4" fill="#111" />}
               {mode === "level" && sx && idx < 3 && (
-                <text x={sx} y={y - 10} textAnchor="middle" fontSize="10" fill="#333">{`G_${labels[idx]}`}</text>
+                <text x={sx} y={y - 10} textAnchor="middle" fontSize="10" fill="#333">
+                  <tspan fontStyle="italic">G</tspan>
+                  <tspan dy="3" fontSize="8">{labels[idx]}</tspan>
+                </text>
               )}
               {mode === "calendar" && idx === 0 && sx && (
                 <text x={sx} y={y - 10} textAnchor="middle" fontSize="10" fill="#333">Policy change</text>
@@ -677,9 +655,6 @@ function Motivation() {
             "They allow players to continue from the point of failure instead of restarting the level.",
           ]}
         />
-        <div style={{ marginTop: 16 }}>
-          <BonusActionsExplainer />
-        </div>
       </Slide>
 
       <Slide title="Industry Shift: Fixed to Dynamic Post-Failure Offers">
@@ -728,7 +703,13 @@ function Motivation() {
             <b>Player engagement &amp; game design:</b> engagement optimization (Huang et al. 2019; Deng et al. 2024; Zhao et al. 2022) and dynamic difficulty adjustment (Ascarza et al. 2024).
           </Callout>
           <Callout color={COLORS.green} background={COLORS.greenBg}>
-            <b>Monetization strategies:</b> quantity discounts, price promotions, loot boxes, and bonus-action timing.
+            <b>Monetization strategies:</b>
+            <ul style={{ margin: "8px 0 0", paddingLeft: 18 }}>
+              <li>Quantity discounts (Levitt et al. 2016)</li>
+              <li>Price promotions (Runge et al. 2022)</li>
+              <li>Loot boxes (Chen et al. 2021; Miao et al. 2025; Amano et al. 2024)</li>
+              <li>Bonus actions — timing dimension only (Sheng et al. 2025)</li>
+            </ul>
           </Callout>
           <Callout color={COLORS.red} background={COLORS.redBg}>
             <b>Our contribution:</b> the first empirical study of bonus action design as a monetization mechanism, documenting systematic shifts in <b>intertemporal spending</b>.
@@ -761,7 +742,7 @@ function SettingData() {
               ]}
             />
           }
-          right={<SettingFlow />}
+          right={<SettingFlowImages />}
         />
       </Slide>
 
@@ -838,11 +819,6 @@ function EmpiricalStrategy() {
             "Event-study TWFE can also generate <b>contaminated dynamic estimates</b> (Sun &amp; Abraham 2021).",
           ]}
         />
-        <div style={{ marginTop: 14 }}>
-          <Callout color={COLORS.red} background={COLORS.redBg}>
-            <b>Implication:</b> compare treated units only to <b>not-yet-treated</b> units.
-          </Callout>
-        </div>
       </Slide>
     </div>
   );
@@ -1049,11 +1025,10 @@ function Conclusion() {
         </ol>
       </Slide>
 
-      <Slide title="Thank You" kicker="Contact">
+      <Panel style={{ padding: "38px 20px 34px", marginBottom: 18 }}>
         <div
           style={{
             textAlign: "center",
-            padding: "20px 10px 10px",
             fontFamily: "Georgia, serif",
             fontSize: 42,
             color: COLORS.ink,
@@ -1064,7 +1039,7 @@ function Conclusion() {
         <div style={{ textAlign: "center", fontSize: 18, color: "#5b5c72", marginTop: 12 }}>
           enfal.arisoy@colorado.edu
         </div>
-      </Slide>
+      </Panel>
     </div>
   );
 }
