@@ -255,6 +255,8 @@ function SettingFlowImages() {
     flex: "1 1 0",
     minWidth: 0,
     textAlign: "center",
+    display: "grid",
+    gridTemplateRows: "280px auto auto",
   };
 
   const imageStyle = {
@@ -282,7 +284,7 @@ function SettingFlowImages() {
   };
 
   return (
-    <div style={{ display: "flex", gap: 16, alignItems: "stretch", flexWrap: "nowrap" }}>
+    <div style={{ display: "flex", gap: 16, alignItems: "flex-start", flexWrap: "nowrap" }}>
       <div style={figureStyle}>
         <img src="./IMG_0355.jpg" alt="Match-3 level" style={imageStyle} />
         <div style={captionTitle}>Match-3 Level</div>
@@ -297,6 +299,7 @@ function SettingFlowImages() {
           display: "flex",
           alignItems: "center",
           justifyContent: "center",
+          height: 280,
         }}
       >
         →
@@ -315,6 +318,7 @@ function SettingFlowImages() {
           display: "flex",
           alignItems: "center",
           justifyContent: "center",
+          height: 280,
         }}
       >
         →
