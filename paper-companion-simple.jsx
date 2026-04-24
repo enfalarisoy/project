@@ -700,7 +700,11 @@ function Motivation() {
       <Slide title="Related Literature">
         <div style={{ display: "grid", gap: 14 }}>
           <Callout color={COLORS.blue} background={COLORS.blueBg}>
-            <b>Player engagement &amp; game design:</b> engagement optimization (Huang et al. 2019; Deng et al. 2024; Zhao et al. 2022) and dynamic difficulty adjustment (Ascarza et al. 2024).
+            <b>Player engagement &amp; game design:</b>
+            <ul style={{ margin: "8px 0 0", paddingLeft: 18 }}>
+              <li>Engagement optimization (Huang et al. 2019; Deng et al. 2024; Zhao et al. 2022)</li>
+              <li>Dynamic difficulty adjustment (Ascarza et al. 2024)</li>
+            </ul>
           </Callout>
           <Callout color={COLORS.green} background={COLORS.greenBg}>
             <b>Monetization strategies:</b>
