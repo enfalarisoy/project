@@ -665,9 +665,9 @@ function Motivation() {
         <BulletList
           compact
           items={[
-            "Starting in <b>2023</b>, leading casual games shifted from <b>fixed</b> to <b>dynamic</b> post-failure offers.",
-            "Fixed policy: constant bonus offer (<b>+5 moves</b>) regardless of the number of failures.",
-            "Dynamic policy: offer size <b>increases</b> with repeated failures while <b>prices stay the same</b>.",
+            "Starting in 2023, leading casual games shifted from <b>fixed</b> to <b>dynamic</b> post-failure offers.",
+            "Fixed policy: Constant bonus offer (+5 moves) regardless of the number of failures.",
+            "Dynamic policy: Offer size <i>increases</i> with repeated failures (+5, +5, +10, +15, ...) while <i>prices stay the same</i> (i.e., more value for the same price).",
           ]}
         />
         <img src="./offsm.png" alt="Fixed to dynamic offer sizes" style={{ width: "100%", marginTop: 16, borderRadius: 10, display: "block" }} />
@@ -733,7 +733,6 @@ function SettingData() {
     <div>
       <TabHeading
         title="Setting & Data"
-        subtitle="Partner context, the policy change itself, and the player-level play-by-play dataset used for identification."
       />
 
       <Slide title="Game Setting">
@@ -920,7 +919,7 @@ function MechanismHeterogeneity() {
         <div style={{ marginTop: 14 }}>
           <BulletList
             items={[
-              "1st offer: short-run increase, no long-run effect (<b>-23 coins</b>, not significant).",
+              "1st offer: short-run increase, decrease in long-run (<b>-23 coins</b>, 5 percent).",
               "2nd+ offers: large and persistent decline (<b>-58*** coins</b>, <b>-62%</b>).",
               "Reduced spending is driven by the <b>decline in costly repeat continues</b>.",
             ]}
