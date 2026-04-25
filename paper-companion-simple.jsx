@@ -486,7 +486,6 @@ function ExposureDiagram({ title, mode }) {
 
   return (
     <Panel style={{ padding: "14px 14px 10px" }}>
-      <div style={{ fontSize: 12, fontWeight: 700, color: COLORS.ink, marginBottom: 6, textAlign: "center" }}>{title}</div>
       <svg viewBox={`0 0 ${width} ${height}`} style={{ width: "100%", display: "block" }}>
         <defs>
           <marker id={"arrow-" + mode} markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto">
@@ -601,7 +600,6 @@ function Motivation() {
     <div>
       <TabHeading
         title="Motivation"
-        subtitle="Why mobile game studios shifted from ads toward dynamic post-failure offers, and the key research trade-off behind that design."
       />
 
       <Slide title="Video Game Industry">
@@ -808,12 +806,12 @@ function EmpiricalStrategy() {
             "Players are at <b>different levels</b> at the moment of the change.",
             "All players follow the same <b>linear progression</b> path.",
             "This creates <b>staggered exposure</b> to the dynamic policy across levels.",
-            'Time dimension: <b>level progression</b>, where treatment timing is <b>G<sub>i</sub></b>, the first level at which a player sees a dynamic offer.',
+                'Time dimension: <b>level progression</b>, where treatment timing is <b>G<sub>i</sub></b>, the first level at which a player sees a dynamic offer <b>&gt;=10</b>.',
           ]}
         />
         <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 14, marginTop: 16 }}>
-          <ExposureDiagram title="Calendar-time view" mode="calendar" />
-          <ExposureDiagram title="Level-progression view" mode="level" />
+          <ExposureDiagram title="Calendar-time" mode="calendar" />
+          <ExposureDiagram title="Level-progression" mode="level" />
         </div>
       </Slide>
 
@@ -899,7 +897,6 @@ function MechanismHeterogeneity() {
     <div>
       <TabHeading
         title="Mechanism & Heterogeneity"
-        subtitle="The spending decline comes from within-attempt substitution, strategic waiting, and heterogeneous responses across player types and level difficulty."
       />
 
       <Slide title="Decomposition of Total Coin Spending on Post-failure Offers">
@@ -998,7 +995,6 @@ function Conclusion() {
     <div>
       <TabHeading
         title="Conclusion"
-        subtitle="The long-run response to dynamic post-failure offers looks very different from the short-run signal that a standard A/B test would deliver."
       />
 
       <Slide title="Review of Results">
